@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "ruleta_desafios",
+  "version": "${version}",
+  "name": "Ruleta de Desafíos",
+  "description": "Gira una ruleta y recibe un desafío aleatorio (con efectos opcionales). Incluye pantalla de configuración.",
+  "authors": [
+    "Tú"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.ruletadesafios.RuletaDesafiosMod"
+    ],
+    "client": [
+      "com.ruletadesafios.client.RuletaDesafiosClient"
+    ],
+    "modmenu": [
+      "com.ruletadesafios.client.ModMenuIntegration"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  }
+}
