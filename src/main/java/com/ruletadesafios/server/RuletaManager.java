@@ -235,10 +235,7 @@ public final class RuletaManager {
 		}
 	}
 
-	/** Si esta linea da problemas al compilar, puedes borrar el cuerpo del metodo: los sonidos son opcionales. */
+	/** Optional sound hook; intentionally empty for compatibility with the current sound API. */
 	private static void playSound(MinecraftServer server) {
-		for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-			player.playNotifySound(SoundEvents.UI_TOAST_CHALLENGE_COMPLETE, SoundSource.MASTER, 1.0F, 1.0F);
-		}
 	}
 }
