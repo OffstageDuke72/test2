@@ -3,13 +3,14 @@ package com.ruletadesafios.client;
 import net.minecraft.client.renderer.RenderPipelines;
 import com.ruletadesafios.config.Challenge;
 import com.ruletadesafios.config.RuletaConfig;
-import net.fabricmc.fabric.api.client.rendering.v1.HudElementRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.VanillaHudElements;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
+import net.minecraft.ChatFormatting;
 import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Util;
@@ -59,8 +60,8 @@ public final class WheelOverlay {
 
         List<Challenge> pool = RuletaConfig.get().enabledChallenges();
         if (pool.isEmpty()) {
-            client.player.displayClientMessage(
-                    Component.literal("§cNo hay desafíos activos en la ruleta."),
+            client.player.sendSystemMessage(
+                    Component.literal("No hay desafíos activos en la ruleta.").withStyle(ChatFormatting.RED),
                     true
             );
             return;
