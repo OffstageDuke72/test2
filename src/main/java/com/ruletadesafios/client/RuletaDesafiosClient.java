@@ -36,9 +36,9 @@ public class RuletaDesafiosClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		WheelOverlay.init();
 		KeyMapping wheelKey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
-			"key.ruleta_desafios.open_wheel", InputConstants.Type.KEYSYM, InputConstants.KEY_R, CATEGORY));
+			"key.ruleta_desafios.open_wheel", InputConstants.Type.KEY, InputConstants.KEY_R, CATEGORY));
 		KeyMapping configKey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
-			"key.ruleta_desafios.open_config", InputConstants.Type.KEYSYM, InputConstants.KEY_K, CATEGORY));
+			"key.ruleta_desafios.open_config", InputConstants.Type.KEY, InputConstants.KEY_K, CATEGORY));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (wheelKey.consumeClick()) {
