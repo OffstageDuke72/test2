@@ -61,8 +61,7 @@ public final class WheelOverlay {
         List<Challenge> pool = RuletaConfig.get().enabledChallenges();
         if (pool.isEmpty()) {
             client.player.sendSystemMessage(
-                    Component.literal("No hay desafíos activos en la ruleta.").withStyle(ChatFormatting.RED),
-                    true
+                    Component.literal("No hay desafíos activos en la ruleta.").withStyle(ChatFormatting.RED)
             );
             return;
         }
